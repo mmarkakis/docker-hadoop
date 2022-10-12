@@ -41,6 +41,8 @@ ENV USER=root
 ENV PATH $HADOOP_HOME/bin/:$PATH
 
 ADD entrypoint.sh /entrypoint.sh
+RUN mkdir /datasets
+ADD datasets/bible.txt /datasets/bible.txt
 
 RUN chmod a+x /entrypoint.sh
 
