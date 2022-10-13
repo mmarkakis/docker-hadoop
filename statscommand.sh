@@ -1,0 +1,1 @@
+while true; do sudo docker stats --no-stream | tail -n+2 | ts '%Y-%m-%d %H:%M:%S,000 USAGE'| awk -F ' ' '{N=$5;$4="";$5="";printf("%-17s%s%s\n" , N, "| ", $0)}' | tee --append stats.txt; sleep 1; done
